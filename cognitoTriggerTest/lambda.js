@@ -2,12 +2,17 @@ let AWS = require('aws-sdk');
 const cognito_idp = new AWS.CognitoIdentityServiceProvider();
 exports.handler = function (event, context, callback) {
 	cognito_idp.adminCreateUser({
-		UserPoolId: process.env.UserPoolId_cognitoTestABC, /* required */
-		Username: "amila1991", /* required */
-		DesiredDeliveryMediums: ["SMS"],//[SMS | EMAIL,/* more items */],
+		UserPoolId: process.env.UserPoolId_cognitocognitoTestABC,
+
+		/* required */
+		Username: "Amila",
+
+		/* required */
+		DesiredDeliveryMediums: ["SMS"],
+		//[SMS | EMAIL,/* more items */],
 		ForceAliasCreation: false,
-		MessageAction: "RESEND",
-		TemporaryPassword: "Abcs#123",
+		MessageAction: "SUPPRESS",
+		TemporaryPassword: "PAssowrd#123",
 		UserAttributes: [],
 		ValidationData: []
 	}, function (error, data) {
@@ -17,6 +22,7 @@ exports.handler = function (event, context, callback) {
 		}
 		// your logic goes within this block
 	});
+
 
 
 	callback(null, 'Successfully executed');
