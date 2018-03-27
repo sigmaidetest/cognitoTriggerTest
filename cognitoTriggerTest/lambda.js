@@ -5,7 +5,7 @@ exports.handler = function (event, context, callback) {
 		UserPoolId: process.env.UserPoolId_cognitocognitoTestABC,
 
 		/* required */
-		Username: "Amila",
+		Username: "Kasun",
 
 		/* required */
 		DesiredDeliveryMediums: ["SMS"],
@@ -15,6 +15,18 @@ exports.handler = function (event, context, callback) {
 		TemporaryPassword: "PAssowrd#123",
 		UserAttributes: [],
 		ValidationData: []
+	}, function (error, data) {
+		if (error) {
+			// implement error handling logic here
+			throw error;
+		}
+		// your logic goes within this block
+	});
+
+
+	cognito_idp.adminDisableUser({
+		UserPoolId: process.env.UserPoolId_cognitocognitoTestABC, /* required */
+		Username: "Amila" /* required */
 	}, function (error, data) {
 		if (error) {
 			// implement error handling logic here
