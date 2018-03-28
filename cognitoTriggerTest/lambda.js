@@ -41,7 +41,7 @@ exports.handler = function (event, context, callback) {
 
 	cognito_idp.adminEnableUser({
 		UserPoolId: "us-east-1_KtFzugXbq", /* required */
-		Username: "amila" /* required */
+		Username: "test" /* required */
 	}, function (error, data) {
 		if (error) {
 			// implement error handling logic here
@@ -49,8 +49,6 @@ exports.handler = function (event, context, callback) {
 		}
 		// your logic goes within this block
 	});
-
-
 
 
 	callback(null, 'Successfully executed');
