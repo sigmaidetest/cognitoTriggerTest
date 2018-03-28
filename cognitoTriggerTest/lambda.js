@@ -24,24 +24,13 @@ exports.handler = function (event, context, callback) {
 	});
 
 
-	cognito_idp.adminDisableUser({
+	cognito_idp.adminEnableUser({
 		UserPoolId: process.env.UserPoolId_cognitocognitoTestABC,
 
 		/* required */
 		Username: "Amila"
 		/* required */
 
-	}, function (error, data) {
-		if (error) {
-			// implement error handling logic here
-			throw error;
-		}
-		// your logic goes within this block
-	});
-
-	cognito_idp.adminEnableUser({
-		UserPoolId: "us-east-1_KtFzugXbq", /* required */
-		Username: "test" /* required */
 	}, function (error, data) {
 		if (error) {
 			// implement error handling logic here
