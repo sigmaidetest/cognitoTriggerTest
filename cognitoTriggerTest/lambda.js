@@ -5,7 +5,7 @@ exports.handler = function (event, context, callback) {
 		UserPoolId: process.env.UserPoolId_cognitocognitoTestABC,
 
 		/* required */
-		Username: "Kasun",
+		Username: "Kasun1",
 
 		/* required */
 		DesiredDeliveryMediums: ["SMS"],
@@ -20,6 +20,7 @@ exports.handler = function (event, context, callback) {
 			// implement error handling logic here
 			throw error;
 		}
+		console.log('output 1', data);
 		// your logic goes within this block
 	});
 
@@ -36,6 +37,18 @@ exports.handler = function (event, context, callback) {
 			// implement error handling logic here
 			throw error;
 		}
+		console.log('output 2', data);
+		// your logic goes within this block
+	});
+
+	cognito_idp.listUsers({
+		UserPoolId: process.env.UserPoolId_cognitocognitoTestABC
+	}, function (error, data) {
+		if (error) {
+			// implement error handling logic here
+			throw error;
+		}
+		console.log('output 3', data);
 		// your logic goes within this block
 	});
 
